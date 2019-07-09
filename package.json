@@ -8,7 +8,9 @@
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
     "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "docs:build": "vuepress build docs",
+    "docs:deploy": "bash deploy.sh",
+    "docs:publish": "vuepress build docs && bash deploy.sh"
   },
   "dependencies": {
     "core-js": "^2.6.5",
