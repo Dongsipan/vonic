@@ -1,3 +1,3 @@
 <template>
-  <xr-test></xr-test>
+  <s-button>button</s-button>
 </template>

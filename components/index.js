@@ -1,5 +1,6 @@
 import Test from "./test";
-const components = [Test];
+import { default as Button } from "./button";
+const components = [Test, Button];
 const install = function(Vue) {
   if (install.installed) return;
   install.installed = true;

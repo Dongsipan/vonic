@@ -1,0 +1,264 @@
+@import "./../../../style/mixins/mixins.scss";
+@import "./../../../style/mixins/utils.scss";
+@import "./../../../style/common/var.scss";
+@import "./var.scss";
+@import "./mixins.scss";
+
+@include b(button) {
+  white-space: nowrap;
+  cursor: pointer;
+  background: $--color-white;
+  border: 1px solid;
+  border-color: #e4e4e4;
+  color: $--color-text-primary;
+  -webkit-appearance: none;
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  margin: 0;
+  transition: .1s;
+  font-weight: normal;
+  @include utils-user-select(none);
+
+  &+& {
+    margin-left: 10px;
+  }
+
+  @include button-size($--button-small-height, $--button-small-font-size, $--button-raidus-normal);
+
+  &:hover,
+  &:focus {
+    color: $--color-white;
+    border-color: $--color-primary;
+    background-color: $--color-primary;
+  }
+
+  &:active {
+    color: mix($--color-black, $--color-white, $--button-active-shade-percent);
+    border-color: mix($--color-black, $--color-white, $--button-active-shade-percent);
+    outline: none;
+  }
+
+  &::-moz-focus-inner {
+    border: 0;
+  }
+
+  & [class*="icon-"] {
+    font-size: inherit;
+
+    &+span {
+      margin-left:2px;
+      vertical-align: middle;
+      font-size: 12px;
+    }
+  }
+
+  @include when(active) {
+    color: mix($--color-black, $--color-white, $--button-active-shade-percent);
+    border-color: mix($--color-black, $--color-white, $--button-active-shade-percent);
+  }
+
+  @include when(disabled) {
+
+    &,
+    &:hover,
+    &:focus {
+      color: $--button-disabled-color;
+      cursor: not-allowed;
+      background-image: none;
+      background-color: $--button-disabled-background;
+      border-color: $--border-color-light;
+    }
+
+    &.button--text {
+      background-color: transparent;
+    }
+  }
+
+  @include when(loading) {
+    position: relative;
+    pointer-events: none;
+
+    &:before {
+      pointer-events: none;
+      content: '';
+      position: absolute;
+      left: -1px;
+      top: -1px;
+      right: -1px;
+      bottom: -1px;
+      border-radius: inherit;
+      background-color: rgba(255, 255, 255, .35);
+    }
+  }
+
+  @include when(round) {
+    border-radius: $--button-raidus-round;
+  }
+
+  @include when(rectangle) {
+    border-color: #e4e4e4;
+    border-radius: $--button-raidus-rectangle;
+  }
+
+  @include m(primary) {
+    @include button-variant($--color-white, $--color-primary, $--color-primary);
+
+    @include when(rectangle) {
+      border-color: transparent;
+      border-radius: $--button-raidus-rectangle;
+    }
+  }
+
+  @include m(secondary) {
+    @include button-variant($--color-white, $--color-success, $--color-success);
+
+    @include when(rectangle) {
+      border-color: transparent;
+      border-radius: 0;
+    }
+  }
+
+  @include m(tag) {
+    @include button-variant($--color-white, $--color-primary, $--color-primary);
+
+    &.active {
+      color: $--color-white;
+      border-color: $--color-primary;
+      background-color: $--color-primary;
+    }
+  }
+
+  @include m(icon) {
+    @include button-variant($--color-text-primary, $--color-white, $--border-color-base);
+
+    &.active {
+      color: $--color-text-primary;
+      border-color: $--border-color-base;
+      background-color: $--color-white;
+    }
+  }
+
+  @include m(large) {
+    @include button-size($--button-large-height, $--button-large-font-size, $--button-raidus-large);
+  }
+
+  @include m(medium) {
+    @include button-size($--button-medium-height, $--button-medium-font-size, $--button-raidus-large);
+  }
+
+  @include m(small) {
+    @include button-size($--button-small-height, $--button-small-font-size, $--button-raidus-normal);
+  }
+
+  @include m(mini) {
+    @include button-size($--button-mini-height, $--button-mini-font-size, $--button-raidus-normal);
+  }
+
+  @include m(text) {
+    @include text-variant($--color-primary);
+
+    @include when(primary) {
+      @include text-variant($--color-primary);
+    }
+
+    @include when(secondary) {
+      @include text-variant($--color-success);
+    }
+
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  @include m(text-padding) {
+    @include text-variant($--color-primary);
+
+    @include when(primary) {
+      @include text-variant($--color-primary);
+    }
+
+    @include when(secondary) {
+      @include text-variant($--color-success);
+    }
+  }
+}
+
+@include b(button-group) {
+  @include utils-clearfix;
+  display: flex;
+
+  &>.spirit-button {
+    &+.spirit-button {
+      margin-left: 0;
+    }
+  }
+
+  @include m(auto) {
+    &>.spirit-button {
+      flex:1;
+      width:0;
+      float:none;
+    }
+  }
+
+  @include m(gap) {
+    &>.spirit-button {
+      &+.spirit-button {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  @include m(round) {
+    &>.spirit-button {
+      &:first-child {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+      }
+
+      &:last-child {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+      }
+
+      &:not(:first-child):not(:last-child) {
+        border-radius: 0;
+      }
+
+      &:not(:last-child) {
+        margin-right: -1px;
+      }
+    }
+  }
+
+  @include m(scroll) {
+    overflow: auto;
+
+    &>div {
+      display: flex;
+      padding-bottom: 10px;
+      &>.spirit-button {
+        &:first-child {
+          margin-left: 15px;
+        }
+
+        &:last-child {
+          margin-right: 15px;
+        }
+      }
+    }
+  }
+
+  @include m(split) {
+    &> .spirit-button {
+      margin: 14px 0;
+      &+.spirit-button {
+        border-left: 1px solid #e2e2e2;
+      }
+    }
+  }
+}
