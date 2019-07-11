@@ -110,8 +110,35 @@
     }
   }
 
-  @include m(secondary) {
+  @include m(success) {
     @include button-variant($--color-white, $--color-success, $--color-success);
+
+    @include when(rectangle) {
+      border-color: transparent;
+      border-radius: 0;
+    }
+  }
+
+  @include m(info) {
+    @include button-variant($--color-white, $--color-info, $--color-info);
+
+    @include when(rectangle) {
+      border-color: transparent;
+      border-radius: 0;
+    }
+  }
+
+  @include m(warning) {
+    @include button-variant($--color-white, $--color-warning, $--color-warning);
+
+    @include when(rectangle) {
+      border-color: transparent;
+      border-radius: 0;
+    }
+  }
+
+  @include m(danger) {
+    @include button-variant($--color-white, $--color-danger, $--color-danger);
 
     @include when(rectangle) {
       border-color: transparent;
@@ -260,5 +287,18 @@
         border-left: 1px solid #e2e2e2;
       }
     }
+  }
+}
+
+.icon-loading {
+  display: inline-block;
+  animation: rotating 2s linear infinite;
+}
+@keyframes rotating {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
   }
 }

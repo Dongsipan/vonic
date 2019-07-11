@@ -1,17 +1,3 @@
-<style lang="scss" scoped>
-.icon-loading {
-  display: inline-block;
-  animation: rotating 2s linear infinite;
-}
-@keyframes rotating {
-  from {
-    transform: rotateZ(0deg);
-  }
-  to {
-    transform: rotateZ(360deg);
-  }
-}
-</style>
 <template>
   <button
     class="spirit-button"

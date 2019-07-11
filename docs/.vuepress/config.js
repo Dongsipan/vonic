@@ -1,4 +1,3 @@
-const path = require('path')
 module.exports = {
   title: 'Spirit UI',
   description: 'Spirit UI',
@@ -25,15 +24,5 @@ module.exports = {
         ]
       },
     ]
-  },
-  postcss: [require('autoprefixer')],
-    sass: { indentedSyntax: true },
-    scss: {
-        includePaths: ["../../components/style"]
-    },
-    chainWebpack: (config, isServer) => {
-        config.resolveLoader
-            .modules
-            .add(path.resolve(__dirname, './node_modules'))
-    }
+  }
 }

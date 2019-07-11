@@ -4,10 +4,35 @@
     <code-card>
       <s-button>default</s-button>
       <s-button type="primary">primary</s-button>
-      <s-button type="secondary">secondary</s-button>
-
+      <s-button type="success">success</s-button>
+      <s-button type="info">info</s-button>
+      <s-button type="warning">warning</s-button>
+      <s-button type="danger">danger</s-button>
+      <br>
+      <br>
+      <s-button round>圆角按钮</s-button>
+      <s-button type="primary" round>圆角按钮</s-button>
+      <s-button type="success" round>圆角按钮</s-button>
+      <s-button type="info" round>圆角按钮</s-button>
+      <s-button type="warning" round>圆角按钮</s-button>
+      <s-button type="danger" round>圆角按钮</s-button>
+      <br>
+      <br>
+      <s-button rectangle>直角按钮</s-button>
+      <s-button type="primary" rectangle>直角按钮</s-button>
+      <s-button type="success" rectangle>直角按钮</s-button>
+      <s-button type="info" rectangle>直角按钮</s-button>
+      <s-button type="warning" rectangle>直角按钮</s-button>
+      <s-button type="danger" rectangle>直角按钮</s-button>
       <template v-slot:code>
-        <pre v-highlightjs><code class="vue">{{code1}}</code></pre>
+        <pre v-highlightjs><code class="html">{{code1}}</code></pre>
+      </template>
+    </code-card>
+    <h3>加载中</h3>
+    <code-card>
+      <s-button type="primary" loading>加载中</s-button>
+      <template v-slot:code>
+        <pre v-highlightjs><code class="html">{{code2}}</code></pre>
       </template>
     </code-card>
   </div>
@@ -20,7 +45,6 @@ import VueHighlightJS from 'vue-highlightjs'
 
 import '../../../components/style'
 
-// Tell Vue.js to use vue-highlightjs
 Vue.use(VueHighlightJS)
 export default {
   data () {
@@ -28,7 +52,26 @@ export default {
       code1:`
       <s-button>default</s-button>
       <s-button type="primary">primary</s-button>
-      <s-button type="secondary">secondary</s-button>
+      <s-button type="success">success</s-button>
+      <s-button type="info">info</s-button>
+      <s-button type="warning">warning</s-button>
+      <s-button type="danger">danger</s-button>
+
+      <s-button type="primary" round>圆角按钮</s-button>
+      <s-button type="success" round>圆角按钮</s-button>
+      <s-button type="info" round>圆角按钮</s-button>
+      <s-button type="warning" round>圆角按钮</s-button>
+      <s-button type="danger" round>圆角按钮</s-button>
+
+      <s-button rectangle>直角按钮</s-button>
+      <s-button type="primary" rectangle>直角按钮</s-button>
+      <s-button type="success" rectangle>直角按钮</s-button>
+      <s-button type="info" rectangle>直角按钮</s-button>
+      <s-button type="warning" rectangle>直角按钮</s-button>
+      <s-button type="danger" rectangle>直角按钮</s-button>
+       `.replace(/^\s*/gm, '').trim(),
+       code2:`
+      <s-button loading>加载中</s-button>
        `.replace(/^\s*/gm, '').trim(),
     }
   },

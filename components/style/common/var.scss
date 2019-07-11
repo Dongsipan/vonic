@@ -1,7 +1,15 @@
 /* Color
 -------------------------- */
 /// color|1|Brand Color|0
-$--color-primary: rgba(75, 147, 177, 1) !default;
+$--color-primary: #3C8CFA !default;
+/// color|1|Functional Color|1
+$--color-success: #00798C !default;
+/// color|1|Functional Color|1
+$--color-warning: #EDAE49 !default;
+/// color|1|Functional Color|1
+$--color-danger: #D1495B !default;
+/// color|1|Functional Color|1
+$--color-info: #30638E !default;
 /// color|1|Background Color|4
 $--color-white: #FFFFFF !default;
 /// color|1|Background Color|4
@@ -15,14 +23,6 @@ $--color-primary-light-6: mix($--color-white, $--color-primary, 60%) !default;
 $--color-primary-light-7: mix($--color-white, $--color-primary, 70%) !default;
 $--color-primary-light-8: mix($--color-white, $--color-primary, 80%) !default;
 $--color-primary-light-9: mix($--color-white, $--color-primary, 90%) !default;
-/// color|1|Functional Color|1
-$--color-success: rgba(102, 176, 163, 1) !default;
-/// color|1|Functional Color|1
-$--color-warning: rgba(178, 219, 191, 1) !default;
-/// color|1|Functional Color|1
-$--color-danger: rgba(255, 22, 84, 1) !default;
-/// color|1|Functional Color|1
-$--color-info: rgba(243, 255, 189, 1) !default;
 
 $--color-success-light: mix($--color-white, $--color-success, 80%) !default;
 $--color-warning-light: mix($--color-white, $--color-warning, 80%) !default;

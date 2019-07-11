@@ -7,7 +7,7 @@
       </div>
     </div>
     <div class="card-operation" @click="toggle">
-         {{msg}}
+      {{msg}}
     </div>
  </div>
 </template>

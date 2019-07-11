@@ -11,7 +11,7 @@ sidebarDepth: 2
 <font size=5>Attributes</font>
 | 参数| 说明 | 类型 | 可选值 | 默认值 |
 | :------ | ------ | ------ | ------ | ------ |
-| type | 按钮类型 | string |primary, secondary| - |
+| type | 按钮类型 | string |primary, success, info, warning, danger| - |
 | disabled | 按钮是否禁用 | boolean |- | false |
 | icon | 按钮上图标名称 | string |- | - |
 | loading | 显示加载中图标 | boolean |- | false |
