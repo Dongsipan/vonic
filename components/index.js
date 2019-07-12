@@ -1,3 +1,4 @@
+import "./style";
 import Test from "./test";
 import { default as Button } from "./button";
 const components = [Test, Button];

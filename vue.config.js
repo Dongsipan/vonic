@@ -11,7 +11,6 @@ module.exports = {
   // 扩展 webpack 配置
   chainWebpack: config => {
     config.resolve.alias.set("~", path.resolve("components"));
-
     config.module
       .rule("js")
       .include.add(/components/)

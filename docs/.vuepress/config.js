@@ -1,3 +1,4 @@
+const path = require('path')
 module.exports = {
   title: 'Spirit UI',
   description: 'Spirit UI',
