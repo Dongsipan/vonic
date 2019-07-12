@@ -24,7 +24,7 @@
     margin-left: 10px;
   }
 
-  @include button-size($--button-small-height, $--button-small-font-size, $--button-raidus-normal);
+  @include button-size($--button-small-height, $--button-small-font-size, $--button-radius-normal);
 
   &:hover,
   &:focus {
@@ -93,12 +93,19 @@
   }
 
   @include when(round) {
-    border-radius: $--button-raidus-round;
+    border-radius: $--button-radius-round;
+  }
+
+  @include when(circle) {
+    width: $--button-small-height;
+    height: $--button-small-height;
+    padding: 0;
+    border-radius: $--button-radius-circle;
   }
 
   @include when(rectangle) {
     border-color: #e4e4e4;
-    border-radius: $--button-raidus-rectangle;
+    border-radius: $--button-radius-rectangle;
   }
 
   @include m(primary) {
@@ -106,7 +113,7 @@
 
     @include when(rectangle) {
       border-color: transparent;
-      border-radius: $--button-raidus-rectangle;
+      border-radius: $--button-radius-rectangle;
     }
   }
 
@@ -167,19 +174,35 @@
   }
 
   @include m(large) {
-    @include button-size($--button-large-height, $--button-large-font-size, $--button-raidus-large);
+    @include button-size($--button-large-height, $--button-large-font-size, $--button-radius-large);
+    &.is-circle {
+      width: $--button-large-height;
+      height: $--button-large-height;
+    }
   }
 
   @include m(medium) {
-    @include button-size($--button-medium-height, $--button-medium-font-size, $--button-raidus-large);
+    @include button-size($--button-medium-height, $--button-medium-font-size, $--button-radius-large);
+    &.is-circle {
+      width: $--button-medium-height;
+      height: $--button-medium-height;
+    }
   }
 
   @include m(small) {
-    @include button-size($--button-small-height, $--button-small-font-size, $--button-raidus-normal);
+    @include button-size($--button-small-height, $--button-small-font-size, $--button-radius-normal);
+    &.is-circle {
+      width: $--button-small-height;
+      height: $--button-small-height;
+    }
   }
 
   @include m(mini) {
-    @include button-size($--button-mini-height, $--button-mini-font-size, $--button-raidus-normal);
+    @include button-size($--button-mini-height, $--button-mini-font-size, $--button-radius-normal);
+    &.is-circle {
+      width: $--button-mini-height;
+      height: $--button-mini-height;
+    }
   }
 
   @include m(text) {
@@ -189,10 +212,21 @@
       @include text-variant($--color-primary);
     }
 
-    @include when(secondary) {
+    @include when(success) {
       @include text-variant($--color-success);
     }
 
+    @include when(info) {
+      @include text-variant($--color-info);
+    }
+
+    @include when(warning) {
+      @include text-variant($--color-warning);
+    }
+
+    @include when(danger) {
+      @include text-variant($--color-danger);
+    }
     padding-left: 0;
     padding-right: 0;
   }

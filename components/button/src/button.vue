@@ -12,9 +12,13 @@
         'is-disabled': buttonDisabled,
         'is-loading': loading,
         'is-round': round,
+        'is-circle': circle,
         'is-rectangle': rectangle,
         'is-primary': primary,
-        'is-secondary': secondary
+        'is-success': success,
+        'is-info': info,
+        'is-warning': warning,
+        'is-danger': danger
       }
     ]"
   >
@@ -45,9 +49,13 @@ export default {
     disabled: Boolean,
     autofocus: Boolean,
     round: Boolean,
+    circle: Boolean,
     rectangle: Boolean,
     primary: Boolean,
-    secondary: Boolean
+    success: Boolean,
+    info: Boolean,
+    warning: Boolean,
+    danger: Boolean
   },
 
   computed: {
