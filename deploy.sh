@@ -13,6 +13,6 @@ git init
 git add -A
 git commit -m 'deploy'
 
-git push -f https://github.com/Dongsipan/spirit.git master:gh-pages
+git push -f https://github.com/Dongsipan/vonic.git master:gh-pages
 
 cd -

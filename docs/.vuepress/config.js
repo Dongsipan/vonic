@@ -13,7 +13,7 @@ module.exports = {
       { text: 'Home', link: '/' },
       {
         text: 'GitHub',
-        link: 'https://github.com/Dongsipan/spirit'
+        link: 'https://github.com/Dongsipan/vonic'
       }, 
     ],
     sidebar: [

@@ -3,10 +3,11 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import Spirit from "./../components";
-
+import Vonic from "./../package/index";
 Vue.config.productionTip = false;
 
 Vue.use(Spirit);
+Vue.use(Vonic);
 
 new Vue({
   router,
