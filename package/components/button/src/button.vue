@@ -2,14 +2,15 @@
   <!-- ion-color ios button button-small button-solid ion-activatable ion-focusable hydrated -->
   <button
     ref="button"
-    class="vonic-button vonic-button--ios"
+    class="vonic-button"
     :aria-disabled="disabled ? 'true' : null"
     :disabled="disabled"
     :class="[
+      `vonic-button--${mode}`,
       {
         [`button-${expand}`]: expand,
-        [`button-${size}`]: true,
-        [`button-${shape}`]: true,
+        [`button-${size}`]: size,
+        [`button-${shape}`]: shape,
         [`button-${fill}`]: fill,
         [`button-strong`]: strong,
         'ion-color': color,
@@ -38,6 +39,7 @@
 
 <script>
 import "./style/button.scss";
+import { getMode } from "../../../utils/mode";
 export default {
   name: "VonButton",
   props: {
@@ -79,11 +81,11 @@ export default {
      */
     shape: {
       type: String,
-      default: "round"
+      default: ""
     },
     size: {
       type: String,
-      default: "small"
+      default: ""
     },
     /**
      * If `true`, activates a button with a heavier font weight.
@@ -95,7 +97,8 @@ export default {
   },
   data() {
     return {
-      activated: false
+      activated: false,
+      mode: "ios"
     };
   },
 
@@ -105,7 +108,9 @@ export default {
 
   mounted() {},
 
-  created() {},
+  created() {
+    this.mode = getMode();
+  },
 
   methods: {
     onFocus() {
